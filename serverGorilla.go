@@ -3,6 +3,8 @@ package main
 import (
 	"net/http"
 
+	openapiclient "./openapi"
+
 	"github.com/gorilla/mux"
 )
 
@@ -13,6 +15,11 @@ func (server *myServer) InitRouter() *mux.Router{
     router.HandleFunc("/", put).Methods(http.MethodPut)
     router.HandleFunc("/", delete).Methods(http.MethodDelete)
     router.HandleFunc("/", notFound)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    router.HandleFunc("/data", api_client.DefaultApi.ApiDataGetRequest).Methods(http.MethodGet)
+
     return router
 }
 

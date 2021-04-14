@@ -1,63 +1,59 @@
 openapi: 3.0.0
-
 info:
-  title: test API
   description: retrieve temperature & humidity and compute tests
-  version: "0.1.0"
-
+  title: test API
+  version: 0.1.0
 servers:
-  - url: http://myazure.url.com/api/v1/
-    description: server url from my azure subscription
-
+- description: server url from my azure subscription
+  url: http://myazure.url.com/api/v1/
 paths:
   /data:
     get:
-      summary: Returns a string with an explanation on how to use this url.
       description: Optional extended description in CommonMark or HTML
       responses:
-        '200':
-          description: A json format
+        "200":
           content:
             application/json:
-              schema: 
+              schema:
                 type: string
+          description: A json format
+      summary: Returns a string with an explanation on how to use this url.
     post:
-      summary: Compute temperature and humidity stuff.
-
       requestBody:
-        description: retrieve (temperature/humidity) value
-        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/sensordata'
-
+        description: retrieve (temperature/humidity) value
+        required: true
       responses:
-        '201':
-          description: A json format
+        "201":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/sensorefficiency'
-
+          description: A json format
+      summary: Compute temperature and humidity stuff.
 components:
   schemas:
     sensordata:
       properties:
         temperature:
-          type: number
-          minimum: -50
           maximum: 120
-        humidity:
+          minimum: -50
           type: number
-          minimum: 0
+        humidity:
           maximum: 100
+          minimum: 0
+          type: number
       required:
-        - temperature
-        - humidity
+      - humidity
+      - temperature
     sensorefficiency:
+      example:
+        value: value
       properties:
         value:
           type: string
       required:
-        - value
+      - value
