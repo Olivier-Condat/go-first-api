@@ -11,7 +11,23 @@
     - implement ann add unit tests
     - deploy function in azure and connect it to the iot hub, validate by running the iot simulation
 
+## API V1
+    - /api/v1/{"temperature": float,"humidity": float}
+
 ## Go tips:
+    - Visual Code packages:
+       - Remote - WSL
+       - Go (VS will ask you other Go dependencies to be installed at first run)
+       - Remote - Containers (not used by now)
+
+    - Remove Go autoformat on save (mainly by replacing spaces by tabs!):
+       - in ~/.vscode-server/data/Machine/setting.json 
+       ```     
+       "[go]": {
+        "editor.formatOnSave": false 
+        }
+        ```
+
     - run the web server (local test with Postman for instance):
         go run .
     - run tests with coverage: 

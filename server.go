@@ -2,9 +2,9 @@ package main
 
 import "net/http"
 
-type Server struct{}
+type myServer struct{}
 
-func (server *Server) ServeHTTP(w http.ResponseWriter, r *http.Request){
+func (server *myServer) ServeHTTP(w http.ResponseWriter, r *http.Request){
     w.Header().Set("Content-Type", "application/json")
     switch r.Method {
     case "GET":

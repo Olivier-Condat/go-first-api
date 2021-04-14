@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    s := &Server{}
-    http.Handle("/", s)
-    log.Fatal(http.ListenAndServe(":8080", nil))
+    server := &myServer{}
+    router := server.InitRouter()
+    log.Fatal(http.ListenAndServe(":8080", router))
 }
