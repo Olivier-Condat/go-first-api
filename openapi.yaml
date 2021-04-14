@@ -1,0 +1,65 @@
+openapi: 3.0.0
+
+info:
+  title: test API
+  description: retrieve temperature & humidity and compute tests
+  version: "0.1.0"
+
+servers:
+  - url: http://myazure.url.com/api/v1/
+    description: server url from my azure subscription
+
+paths:
+  /data:
+    get:
+      summary: Returns a string with an explanation on how to use this url.
+      description: Optional extended description in CommonMark or HTML
+      responses:
+        '200':
+          description: A json format
+          content:
+            application/json:
+              schema: 
+                type: string
+
+  /data/{sensordata}:
+    post:
+      summary: Compute temperature and humidity stuff.
+
+      requestBody:
+        description: retrieve (temperature/humidity) value
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sensordata'
+
+      responses:
+        '201':
+          description: A json format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensorefficiency'
+
+components:
+  schemas:
+    sensordata:
+      properties:
+        temperature:
+          type: number
+          minimum: -50
+          maximum: 120
+        humidity:
+          type: number
+          minimum: 0
+          maximum: 100
+      required:
+        - temperature
+        - humidity
+    sensorefficiency:
+      properties:
+        value:
+          type: string
+      required:
+        - value

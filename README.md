@@ -12,7 +12,8 @@
     - deploy function in azure and connect it to the iot hub, validate by running the iot simulation
 
 ## API V1
-    - /api/v1/{"temperature": float,"humidity": float}
+    - /api/v1/data/{"temperature": float,"humidity": float}
+    - to validate openapi structure, there is (swagger)[https://apitools.dev/swagger-parser/online/] web site.
 
 ## Go tips:
     - Visual Code packages:
