@@ -16,3 +16,12 @@
         go run .
     - run tests with coverage: 
         go test -cover
+
+## Useful links:
+
+Ofcourse, nothing new in this repository, only code adaptation from various links.
+- how to [unit test net/http](https://golang.org/src/net/http/httptest/example_test.go)
+- how to unit test [http handlers](https://blog.questionable.services/article/testing-http-handlers-go/)
+- how to unit test [gorilla/mux](https://stackoverflow.com/questions/34435185/unit-testing-for-functions-that-use-gorilla-mux-url-parameters)
+- nice tutorial to build [REST api in go](https://dev.to/moficodes/build-your-first-rest-api-with-go-2gcj)
+
