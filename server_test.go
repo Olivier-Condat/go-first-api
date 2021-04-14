@@ -48,3 +48,42 @@ func TestServeHTTP_GET(t *testing.T){
         t.Fatalf("\nExpected \n\t Body: '%s' but got '%s'", expectedBody, mesg)
     }
  }
+
+ func TestServeHTTP_PUT(t *testing.T){
+
+    mesg, err  := returnServerCall("PUT")
+    if( err != nil ){
+        t.Fatal(err)
+    }
+
+    expectedBody := `{"message": "put called"}`
+    if mesg != expectedBody {
+        t.Fatalf("\nExpected \n\t Body: '%s' but got '%s'", expectedBody, mesg)
+    }
+ }
+
+ func TestServeHTTP_DELETE(t *testing.T){
+
+    mesg, err  := returnServerCall("DELETE")
+    if( err != nil ){
+        t.Fatal(err)
+    }
+
+    expectedBody := `{"message": "delete called"}`
+    if mesg != expectedBody {
+        t.Fatalf("\nExpected \n\t Body: '%s' but got '%s'", expectedBody, mesg)
+    }
+ }
+
+ func TestServeHTTP_DEFAULT(t *testing.T){
+
+    mesg, err  := returnServerCall("this-is-not-covered")
+    if( err != nil ){
+        t.Fatal(err)
+    }
+
+    expectedBody := `{"message": "not found"}`
+    if mesg != expectedBody {
+        t.Fatalf("\nExpected \n\t Body: '%s' but got '%s'", expectedBody, mesg)
+    }
+ }
