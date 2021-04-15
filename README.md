@@ -46,7 +46,11 @@ Local go.mod will be updated =>
 ```golang
 github.com/Olivier-Condat/openapi-go-first-api-test v0.0.0-20210414163125-5dc39a9a7eb3
 ```
-
+## Azure function tips
+   - follow this [tutorial](https://www.hildeberto.com/2021/01/azure-function-golang-2.html) to setup your local environment (works on WSl2 distro as well)
+   - To let Azure Function recognise a function:
+       - create a folder with the name of the function
+       - inside create function.json that will describe the function behavior (see useful links for more details)
 
 ## Go tips:
     - Visual Code packages:
@@ -74,4 +78,5 @@ Ofcourse, nothing new in this repository, only code adaptation from various link
 - how to unit test [http handlers](https://blog.questionable.services/article/testing-http-handlers-go/)
 - how to unit test [gorilla/mux](https://stackoverflow.com/questions/34435185/unit-testing-for-functions-that-use-gorilla-mux-url-parameters)
 - nice tutorial to build [REST api in go](https://dev.to/moficodes/build-your-first-rest-api-with-go-2gcj)
+- Microsoft custom handler in [Golang](https://docs.microsoft.com/en-us/azure/azure-functions/functions-custom-handlers)
 
