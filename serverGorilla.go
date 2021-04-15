@@ -3,8 +3,7 @@ package main
 import (
 	"net/http"
 
-	openapiclient "./openapi"
-
+	//sw "github.com/Olivier-Condat/openapi-go-first-api-test"
 	"github.com/gorilla/mux"
 )
 
@@ -16,9 +15,16 @@ func (server *myServer) InitRouter() *mux.Router{
     router.HandleFunc("/", delete).Methods(http.MethodDelete)
     router.HandleFunc("/", notFound)
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    router.HandleFunc("/data", api_client.DefaultApi.ApiDataGetRequest).Methods(http.MethodGet)
+    // configuration := sw.NewConfiguration()
+    // api_client := sw.NewAPIClient(configuration)
+    
+    // resp, r, err := api_client.DefaultApi.DataGet(context.Background()).Execute()
+    // if err != nil {
+    //     fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.DataGet``: %v\n", err)
+    //     fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    // }
+    // // response from `DataGet`: string
+    // fmt.Fprintf(os.Stdout, "Response from `DefaultApi.DataGet`: %v\n", resp)
 
     return router
 }
