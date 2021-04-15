@@ -10,6 +10,7 @@ import (
 func (server *myServer) InitRouter() *mux.Router{
     router := mux.NewRouter()
     router.HandleFunc("/api/v1", GetFunction).Methods(http.MethodGet)
+    router.HandleFunc("/api/v1", PostFunction).Methods(http.MethodPost)
     
     router.HandleFunc("/", get).Methods(http.MethodGet)
     router.HandleFunc("/", post).Methods(http.MethodPost)
