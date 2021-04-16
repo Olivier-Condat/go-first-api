@@ -82,7 +82,7 @@ func TestGetRequest_POST_V1(t *testing.T){
         t.Fatal(err)
     }
 
-    expectedBody = `{"temperature: "29.099723", humidity: "79.663780"}`
+    expectedBody = ` get a temperature value of: 29.099723 and a humidity value of: 79.663780`
     if mesg != expectedBody {
         t.Fatalf("\nExpected \n\t Body: '%s' but got '%s'", expectedBody, mesg)
     }

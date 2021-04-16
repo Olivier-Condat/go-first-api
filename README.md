@@ -24,6 +24,8 @@
        - Remote - WSL
        - Go (VS will ask you other Go dependencies to be installed at first run)
        - Remote - Containers (not used by now)
+       - Azure Functions
+       - Azure CLI Tools
 
     - Remove Go autoformat on save (mainly by replacing spaces by tabs!):
        - in ~/.vscode-server/data/Machine/setting.json 
@@ -47,7 +49,6 @@
                 }
             - POST body (raw): {"temperature":29.09972319328132,"humidity":79.66377998881264}
             - should respond:  get a temperature value of: 29.099723 and a humidity value of: 79.663780
-    
 
 ## Useful links:
 
